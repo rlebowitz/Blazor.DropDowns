@@ -1,0 +1,22 @@
+﻿@page "/"
+<PageTitle>Index</PageTitle>
+<div class="row">
+    <div class="col-2">
+        <label class="fw-bold">Israeli Cities:</label>
+    </div>
+    <div class="col-4">
+        <DropDown TItem="Category" OnSelected="@OnSelectedCategory">
+            <Label>@SelectedCategory?.Name</Label>
+            <ChildContent>
+                @if (Categories != null)
+                    foreach (var category in Categories)
+                    {
+                        <DropDownItem TItem="Category" Item="@category">
+                            <Label>@category.Name</Label>
+                        </DropDownItem>
+                    }
+            </ChildContent>
+        </DropDown>
+    </div>
+</div>
+
