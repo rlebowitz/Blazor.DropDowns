@@ -2,12 +2,12 @@
 {
     public partial class Index
     {
-        private List<City>? Categories { get; set; }
+        private List<City>? Cities { get; set; }
         private City? SelectedCity { get; set; } 
         private Dessert? SelectedDessert { get; set; } = null;
         protected override void OnParametersSet()
         {
-            Categories = new List<City>
+            Cities = new List<City>
             {
                 new City { Name = "Tel Aviv", Description = "Modern" },
                 new City { Name = "Jerusalem", Description = "Holy" },

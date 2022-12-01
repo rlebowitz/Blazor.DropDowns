@@ -8,8 +8,8 @@
         <DropDown TItem="City" OnSelected="@OnSelectedCity">
             <Label>@((SelectedCity == null) ? "Select a City" : SelectedCity.Name)</Label>
             <ChildContent>
-                @if (Categories != null)
-                    foreach (var category in Categories)
+                @if (Cities != null)
+                    foreach (var category in Cities)
                     {
                         <DropDownItem TItem="City" Item="@category">
                             <Label>@category.Name</Label>
