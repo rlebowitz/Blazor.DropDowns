@@ -15,7 +15,7 @@ namespace Blazor.Controls
         {
             if (DropDown != null)
             {
-                await DropDown.HandleSelect(Item, Label);
+                await DropDown.HandleSelect(Item);
             }
         }
 

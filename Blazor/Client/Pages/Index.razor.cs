@@ -2,24 +2,30 @@
 {
     public partial class Index
     {
-        private List<Category>? Categories { get; set; }
-        private Category? SelectedCategory { get; set; } = new Category { Name = "Select a City" };
+        private List<City>? Categories { get; set; }
+        private City? SelectedCity { get; set; } 
+        private Dessert? SelectedDessert { get; set; } = null;
         protected override void OnParametersSet()
         {
-            Categories = new List<Category>
+            Categories = new List<City>
             {
-                new Category { Name = "Tel Aviv", Description = "Modern" },
-                new Category { Name = "Jerusalem", Description = "Holy" },
-                new Category { Name = "Haifa", Description = "Integrated"},
-                new Category { Name = "Be'er Sheva", Description = "Southern"},
-                new Category { Name = "Eilat", Description = "Beaches"},
+                new City { Name = "Tel Aviv", Description = "Modern" },
+                new City { Name = "Jerusalem", Description = "Holy" },
+                new City { Name = "Haifa", Description = "Integrated"},
+                new City { Name = "Be'er Sheva", Description = "Southern"},
+                new City { Name = "Eilat", Description = "Beaches"},
             };
             base.OnParametersSet();
         }
 
-        private void OnSelectedCategory(Category category)
+        private void OnSelectedCity(City category)
         {
-            SelectedCategory = category;
+            SelectedCity = category;
+        }
+
+        private void OnSelectedDessert(Dessert? dessert)
+        {
+            SelectedDessert = dessert;
         }
     }
 }

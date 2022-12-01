@@ -5,18 +5,40 @@
         <label class="fw-bold">Israeli Cities:</label>
     </div>
     <div class="col-4">
-        <DropDown TItem="Category" OnSelected="@OnSelectedCategory">
-            <Label>@SelectedCategory?.Name</Label>
+        <DropDown TItem="City" OnSelected="@OnSelectedCity">
+            <Label>@((SelectedCity == null) ? "Select a City" : SelectedCity.Name)</Label>
             <ChildContent>
                 @if (Categories != null)
                     foreach (var category in Categories)
                     {
-                        <DropDownItem TItem="Category" Item="@category">
+                        <DropDownItem TItem="City" Item="@category">
                             <Label>@category.Name</Label>
                         </DropDownItem>
                     }
             </ChildContent>
         </DropDown>
+    </div>
+    <div class="col-2">
+        <label class="fw-bold">Selected City:</label>
+    </div>
+    <div class="col-4">
+        <span class="fw-bold">@SelectedCity?.Name</span>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-2">
+        <label class="fw-bold">Favorite Desserts:</label>
+    </div>
+    <div class="col-4">
+        <EnumDropDown TEnum="Dessert" Selected="SelectedDessert" Callback="OnSelectedDessert" DefaultLabel="Select a Dessert"></EnumDropDown>
+    </div>
+    <div class="col-2">
+        <label class="fw-bold">Selected Dessert:</label>
+    </div>
+    <div class="col-4">
+        <span class="fw-bold">@SelectedDessert?.DisplayName()</span>
     </div>
 </div>
 

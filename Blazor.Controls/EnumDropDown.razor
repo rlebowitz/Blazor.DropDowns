@@ -1,0 +1,14 @@
+﻿@typeparam TEnum
+<div class="dropdown" @onfocusout="OnFocusOut">
+    <button class="btn btn-primary dropdown-toggle @(Show ? "show" : string.Empty)" data-toggle="dropdown" type="button" @onmousedown="OnLabelMouseDown" aria-haspopup="true" aria-expanded="false">
+        @Label
+    </button>
+    <div class="dropdown-menu @(Show ? "show" : string.Empty)">
+        @{
+            foreach (var enumValue in Enum.GetValues(typeof(TEnum)).Cast<TEnum>())
+            {
+                <button class="dropdown-item" type="button" @onmousedown="(() => OnItemMouseDown(enumValue))">@enumValue.DisplayName()</button>
+            }
+        }
+    </div>
+</div>
