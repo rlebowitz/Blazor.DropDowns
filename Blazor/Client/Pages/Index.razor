@@ -9,10 +9,10 @@
             <Label>@((SelectedCity == null) ? "Select a City" : SelectedCity.Name)</Label>
             <ChildContent>
                 @if (Cities != null)
-                    foreach (var category in Cities)
+                    foreach (var city in Cities)
                     {
-                        <DropDownItem TItem="City" Item="@category">
-                            <Label>@category.Name</Label>
+                        <DropDownItem TItem="City" Item="@city">
+                            <Label>@city.Name</Label>
                         </DropDownItem>
                     }
             </ChildContent>

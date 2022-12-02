@@ -40,26 +40,5 @@ namespace Blazor.Controls
                 }
             }
         }
-
-        //private string? GetDisplayName(TEnum? value)
-        //{
-        //    if (value == null)
-        //    {
-        //        return DefaultLabel;
-        //    }
-        //    // Read the Display attribute name
-        //    var name = value.ToString();
-        //    if (name != null)
-        //    {
-        //        var member = value.GetType().GetMember(name)[0];
-        //        var displayAttribute = member.GetCustomAttribute<DisplayAttribute>();
-        //        if (displayAttribute != null)
-        //        {
-        //            return displayAttribute.GetName();
-        //        }
-        //    }
-        //    return Enum.GetName(typeof(TEnum), value);
-        //}
-
     }
 }
